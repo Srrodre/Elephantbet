@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d0d19;
+            color: white;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .top-right-container {
+            display: flex;
+            justify-content: flex-end;
+            position: absolute;
+            top: 20px;
+            right: 10px;
+            width: 100%;
+        }
+
+        .back-btn {
+            background-color: transparent;
+            color: white;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 15px;
+        }
+
+        .signup-btn-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-left: 20px;
+        }
+
+        .signup-btn {
+            background-color: #ff007f;
+            color: white;
+            border: 2px solid white;
+            border-radius: 8px;
+            padding: 8px 15px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        h1 {
+            font-size: 16px;
+            font-weight: normal;
+            text-align: left;
+            margin-top: 70px;
+            line-height: 1.5;
+        }
+
+        input[type="checkbox"] {
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            background-color: #a9a9a9;
+            border: 2px solid #888;
+            border-radius: 4px;
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        input[type="checkbox"]:checked {
+            background-color: #ff007f;
+            border-color: #e60073;
+        }
+
+        input[type="checkbox"]:checked::after {
+            content: '✔';
+            font-size: 14px;
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        label {
+            cursor: pointer;
+        }
+
+        p {
+            color: #a9a9a9;
+            font-size: 10px;
+        }
+
+        form {
+            margin-top: 20px;
+            flex-grow: 1;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 20px;
+            background-color: #444;
+            border: 2px solid #444;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #444;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .remember-me input {
+            margin-right: 5px;
+        }
+
+        .remember-me label {
+            font-size: 12px;
+            color: #d1d1d1;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px; /* Botão mais largo */
+            background-color: #e80e98;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 12px; /* Menor fonte */
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #e60073;
+        }
+
+        .forgot-password {
+            font-size: 12px;
+            color: #a9a9a9;
+            text-align: center;
+            margin-top: 15px;
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .support {
+            position: fixed;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            font-size: 12px;
+            text-align: center;
+            color: #a9a9a9;
+        }
+
+        .support img {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+
+        .support a {
+            color: #a9a9a9;
+            text-decoration: underline;
+            margin-left: 5px;
+        }
+
+        .account-link {
+            font-size: 10px;
+            color: #a9a9a9;
+            text-align: left;
+            visibility: visible;
+        }
+
+        .account-link a {
+            color: #a9a9a9;
+            text-decoration: none;
+        }
+
+        .account-link small {
+            font-size: 10px;
+            color: #a9a9a9;
+        }
+
+        .conta {
+            color: #a9a9a9;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body style="background-color: #0d0e20;">
+ 
+    <div class="container">
+        <div class="top-right-container">
+            <div class="signup-btn-container">
+                <button style="margin-left:10px;" class="signup-btn">INSCREVER-SE</button>
+            </div>
+            <button class="back-btn" onclick="history.back()"><i class="fas fa-times"></i></button>
+        </div>
+
+        <h1></h1> 
+        <small><p class="conta">Já tem uma conta?</p></small>
+        <p class="form-header"><p1 style="font-size: 16px; color:white;">CADASTRE-SE, ESTAMOS ESPERANDO POR VOCÊ</p1>
+        <form>
+            <input style="background-color:#313340; border: none;" type="text" placeholder="Número de telefone" required>
+            <input style="background-color:#313340; border: none;" type="password" placeholder="Palavra-passe" required>
+            <div class="remember-me">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me"></label>
+                <p style="font-size: 13px;">Lembre-se de mim</p>
+            </div>
+            <button style="background-color:#e80e98;" type="submit"><small>ENTRAR</small></button>
+            <p style="margin-top: 20px; text-align:center; font-size:13px; color: #a9a9a9;">ESQUECEU SUA PALAVRA-PASSE?</p>
+        </form>
+        <a href="#" class="forgot-password"></a>
+    </div>
+
+    <div class="support">
+        <img src="https://dl.dropboxusercontent.com/scl/fi/22om15vmajfqj0vk5hgjp/1740831708394.jpeg?rlkey=hjvpevzzdp1tduf8j8b53yjs5&dl=0" alt="Foto">
+        <a href="#">Contate o suporte</a>
+    </div>
+
+</body>
+</html>

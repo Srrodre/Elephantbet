@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d0d19;
+            color: white;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            min-height: 100vh; /* Garantir que ocupa a tela toda */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .signup-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #ff007f; /* Rosa */
+            color: white;
+            border: 2px solid white; /* Linha branca ao redor */
+            border-radius: 5px;
+            padding: 8px 12px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .signup-btn:hover {
+            background-color: #e60073; /* Rosa mais escuro */
+        }
+
+        h1 {
+            font-size: 16px;
+            font-weight: normal; /* Texto normal */
+            text-align: left;
+            margin-top: 70px;
+            line-height: 1.5;
+        }
+
+        h1 .form-header {
+            font-weight: bold; /* "CADASTRE-SE, ESTAMOS ESPERANDO POR VOCÊ" em negrito */
+        }
+
+        form {
+            margin-top: 20px;
+            flex-grow: 1; /* Permite expandir entre topo e rodapé */
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 14px; /* Menor espaçamento interno */
+            margin-bottom: 20px;
+            background-color: #444; /* Cinza escuro */
+            border: 2px solid #444; /* Bordas no mesmo tom */
+            border-radius: 5px;
+            color: white;
+            font-size: 16px; /* Aumentado o tamanho do texto */
+            outline: none; /* Remove o contorno padrão */
+        }
+
+        /* Remove o contorno castanho ao clicar */
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #444; /* Mantém o mesmo cinza escuro */
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .remember-me input {
+            margin-right: 5px;
+        }
+
+        .remember-me label {
+            font-size: 12px;
+            color: #d1d1d1;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px; /* Menor altura do botão */
+            background-color: #ff007f; /* Rosa */
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 14px; /* Texto mais fino */
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #e60073; /* Rosa mais escuro */
+        }
+
+        .forgot-password {
+            font-size: 12px;
+            color: #bbb;
+            text-align: center;
+            margin-top: 15px;
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .support {
+            position: absolute;
+            bottom: 10px; /* Fixa no fundo da tela */
+            left: 0;
+            right: 0;
+            font-size: 12px;
+            text-align: center;
+            color: #bbb;
+        }
+
+        .support span {
+            margin-right: 5px;
+        }
+
+        .account-link {
+            font-size: 10px; /* Texto menor */
+            color: #666; /* Cor cinza suave */
+            text-align: left;
+            visibility: hidden; /* Deixa a frase menos visível */
+        }
+
+        .account-link a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        /* Estilo para "Já tem uma conta?" */
+        .account-link small {
+            font-size: 10px; /* Texto pequeno */
+            color: #666; /* Cinza suave */
+        }
+
+        /* Apenas para a frase "Já tem uma conta?" */
+        .account-link {
+            font-size: 10px; /* Menor tamanho */
+            color: #666; /* Cor cinza */
+            text-align: left;
+            visibility: visible;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="signup-btn">INSCREVER-SE</button>
+        <h1><small>Já tem uma conta?</small><br class="form-header"><small>CADASTRE-SE, ESTAMOS ESPERANDO POR VOCÊ</small></h1>
+        <form>
+            <input type="text" placeholder="Número de telefone" required>
+            <input type="password" placeholder="Palavra-passe" required>
+            <div class="remember-me">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me"><small>Lembre-se de mim</small></label>
+            </div>
+            <button type="submit"><small>ENTRAR</small></button>
+        </form>
+        <a href="#" class="forgot-password"><small>ESQUECEU SUA PALAVRA-PASSE?</small></a>
+        <div class="account-link">
+            <small>Já tem uma conta? <a href="#">Entre agora</a></small>
+        </div>
+        <div class="support">
+            <span>🔔</span><small>Contate o suporte</small>
+        </div>
+    </div>
+</body>
+</html>
